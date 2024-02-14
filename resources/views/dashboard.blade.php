@@ -10,6 +10,10 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <x-welcome />
             </div>
+            <div class="py-6">
+                @livewire('fetch-playlists-button')
+                @livewire('playlist-table')
+            </div> 
         </div>
     </div>
 </x-app-layout>
