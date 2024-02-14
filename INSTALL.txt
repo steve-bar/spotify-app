@@ -1,0 +1,4 @@
+Der Redirect-URI für Spotify wird als ungültig gewertet für lokales testing. Deswegen hinter einem WAMP oder MAMP/ Vagrant mit custom domain verstecken um zu testen.
+
+- localhost auf custom domain mappen
+- spotify-redirect-uri in .env auf domain anpassen
