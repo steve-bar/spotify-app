@@ -37,4 +37,15 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
     }
+    
+    public function mapWebRoutes()
+    {
+        $this->map->group(['prefix' => 'api/playlists', 'middleware' => 'auth'], function ($router) {
+            $router->get('{playlistId}', [SpotifyController::class, 'fetchData']);
+            $router->post('/', [SpotifyController::class, 'storeData']);
+            $router->get('/', [SpotifyController::class, 'listPlaylists']);
+            $router->put('{playlistId}', [SpotifyController::class, 'updatePlaylist']);
+            $router->delete('{playlistId}', [SpotifyController::class, 'deletePlaylist']);
+        });
+    }
 }
